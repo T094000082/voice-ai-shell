@@ -1,0 +1,27 @@
+# 核心依賴
+openai-whisper
+torch
+torchaudio
+
+# 音訊處理
+pyaudio
+pygame
+numpy
+
+# 語音合成 (XTTS)
+TTS>=0.15.0
+
+# 備用語音合成
+pyttsx3
+
+# 系統交互
+keyboard
+asyncio-python
+
+# 其他工具
+pathlib2
+logging
+
+# 開發工具
+pytest
+pytest-asyncio
