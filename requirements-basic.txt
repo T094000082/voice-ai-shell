@@ -1,0 +1,10 @@
+# Voice AI Shell - 基礎套件 (Python 3.12 相容)
+openai-whisper>=20250625
+torch>=2.0.0
+torchaudio>=2.0.0
+pyttsx3>=2.90
+pyaudio>=0.2.11
+pygame>=2.0.0
+numpy>=1.21.0
+keyboard>=0.13.5
+asyncio-mqtt>=0.11.0

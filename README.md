@@ -21,11 +21,21 @@
 
 ### 1. 安裝依賴
 
+#### 方法一：完整安裝（推薦 Python 3.9-3.11）
 ```bash
 pip install -r requirements.txt
 ```
 
-**注意**: 目前存在 NumPy 版本衝突問題，完整語音功能暫時不可用。
+#### 方法二：基礎安裝（Python 3.12 相容）
+```bash
+# 使用基礎需求檔案
+pip install -r requirements-basic.txt
+```
+
+**注意**: 
+- TTS 套件目前不支援 Python 3.12，使用備用語音引擎 pyttsx3
+- 部分 NumPy 版本衝突警告不影響核心功能
+- 建議使用 `full_demo.py` 體驗完整功能
 
 ### 2. 運行程式
 
@@ -113,6 +123,13 @@ ENABLE_SAFETY_CHECK = True  # 啟用安全檢查
 
 ## 🔧 故障排除
 
+### Q: TTS 套件安裝失敗 (Python 3.12)
+**A**: TTS 不支援 Python 3.12，使用基礎安裝方法：
+```bash
+pip install openai-whisper torch torchaudio pyttsx3 pyaudio pygame numpy keyboard asyncio-mqtt
+```
+系統會自動使用 pyttsx3 作為備用語音引擎。
+
 ### Q: 無法載入 Whisper 模型
 **A**: 確保有足夠的記憶體和網路連線下載模型。
 
@@ -125,18 +142,26 @@ ENABLE_SAFETY_CHECK = True  # 啟用安全檢查
 ### Q: 指令無法執行
 **A**: 檢查指令是否在安全白名單中，查看日誌了解詳細錯誤。
 
+### Q: NumPy 版本警告
+**A**: 這些警告不影響核心功能，可以安全忽略。
+
 ## 📊 系統需求
 
 ### 最低需求
-- **Python**: 3.8+
+- **Python**: 3.9+ (推薦 3.9-3.11 完整功能，3.12 基礎功能)
 - **記憶體**: 4GB RAM
 - **儲存**: 5GB 可用空間
 - **音訊**: 麥克風和喇叭
 
 ### 建議需求
+- **Python**: 3.9-3.11 (完整 XTTS 支援)
 - **記憶體**: 8GB+ RAM
 - **GPU**: NVIDIA GPU（加速語音處理）
 - **網路**: 穩定網路連線（初次下載模型）
+
+### 相容性說明
+- **Python 3.12**: 支援基礎功能，使用 pyttsx3 替代 XTTS
+- **Python 3.9-3.11**: 完整功能支援，包含 XTTS 高品質語音合成
 
 ## 🚧 開發計劃
 
