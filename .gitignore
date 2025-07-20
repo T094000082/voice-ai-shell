@@ -18,6 +18,12 @@ var/
 wheels/
 share/python-wheels/
 *.egg-info/
+
+# Virtual environments
+voice_ai_env/
+venv/
+env/
+ENV/
 .installed.cfg
 *.egg
 MANIFEST
